@@ -1,0 +1,116 @@
+{
+  "nodes": [
+    {
+      "node_id": "P01",
+      "description": "交换机A故障（网络阻塞）（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "双极区域网络阻塞（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "3套双极保护主机及控制系统全部死机或失联（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "极控系统启动功率紧急回降（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "复奉直流双极闭锁，输电服务中断（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P_C01",
+      "description": "交换机A存在单点故障隐患",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O_C01",
+      "description": "监控系统未能实时发现交换机A异常与网络阻塞",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M_C01",
+      "description": "运维单位未制定/执行关键网络设备健康监测与维护规程",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M_C02",
+      "description": "系统集成设计时，网络冗余与故障隔离机制考虑不充分",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R_C01",
+      "description": "针对直流控保系统的网络可靠性与冗余标准不够具体和强制",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P_C01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O_C01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M_C01",
+      "to_node_id": "O_C01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M_C01",
+      "to_node_id": "O_C02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R_C01",
+      "to_node_id": "M_C01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R_C01",
+      "to_node_id": "M_C02",
+      "relationship": "导致"
+    }
+  ]
+}

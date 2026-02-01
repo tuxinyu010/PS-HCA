@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "强对流天气（短时大风、龙卷风）",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "E02",
+      "description": "大风卷起彩钢瓦搭挂导线",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "线路未加装有效防异物装置",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "F02",
+      "description": "110kV嘉汉线、果汉线三相短路（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "F03",
+      "description": "330kV嘉峪关变110kV直流系统失电（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "F04",
+      "description": "110kV线路及母联开关保护与控制回路失电（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "F05",
+      "description": "主变后备保护越级动作，110kV母线失压（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "F06",
+      "description": "所带多座变电站失压，大面积停电（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O01",
+      "description": "对线路周边易漂浮物巡查清理不到位",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "E02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E02",
+      "to_node_id": "F02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "F02",
+      "to_node_id": "F05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "F03",
+      "to_node_id": "F04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "F04",
+      "to_node_id": "F05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "F05",
+      "to_node_id": "F06",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "F02",
+      "relationship": "导致"
+    }
+  ]
+}
