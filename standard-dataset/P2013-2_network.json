@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "node_id": "P01",
+      "description": "振百Ⅱ线20563刀闸B相内部短路故障（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P00",
+      "description": "那振线20546刀闸A相气室内部短路故障（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "母线差动保护动作跳闸（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "220kV振林站及关联变电站失压，减供负荷0.8万kW（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O02",
+      "description": "安装调试过程中工艺控制不当",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P04",
+      "description": "振百Ⅱ线20563刀闸B相动触头分闸后未完全缩回屏蔽罩",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P06",
+      "description": "盆式绝缘子存在小裂纹缺陷，绝缘性能下降，盆式绝缘子烧穿",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "日常运维和倒闸操作前未通过针对性测试发现隐患",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "设备供应商（北开电气）对安装调试工艺质量管控失效",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "设备供应商未向用户公开GIS刀闸关键调试标准",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "用户（百色供电局）在工程交接验收阶段未能建立专项验收方法",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M04",
+      "description": "厂家对GIS设备生产制造运输等各环节的质量控制不到位",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "缺乏GIS设备全过程强制性质量管理标准和技术透明度要求",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P00",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M04",
+      "to_node_id": "P06",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    }
+  ]
+}

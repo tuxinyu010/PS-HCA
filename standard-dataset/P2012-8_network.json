@@ -1,0 +1,192 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "强雷暴天气触发线路雷击",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "220kV曲乃I线A、B相因雷击闪络跳闸（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "东嘎电厂燃机差动保护因CT特性不一致误动跳闸（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "稳控装置动作切除20条线路负荷（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "柴拉直流发生双极换相失败（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "藏中电网减供负荷49MW，比例21%（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "R01",
+      "description": "高原等特殊地区差异化防雷设计标准缺失",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "对“小系统、大直流”特殊形态电网的安全监管与标准执行不到位",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "电网规划未满足N-1要求，未解决“大机小网”问题",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "线路工程设计未充分考虑高原恶劣气象条件，防雷措施不足",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "设备采购验收与后续技术监督不到位，CT隐患未发现",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "对发电机差动保护及CT的定期校验与测试不足",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P06",
+      "description": "输电线路防雷水平不足，无法抵御实际雷害",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P07",
+      "description": "发电机差动保护CT励磁特性不一致",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P08",
+      "description": "电网结构薄弱，不满足N-1，呈现“大机小网”特征",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P09",
+      "description": "受端交流系统薄弱，“大直流、弱受端”导致交直流耦合风险高",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P07",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P08",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P09",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P07",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P08",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P09",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P06",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "P07",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    }
+  ]
+}

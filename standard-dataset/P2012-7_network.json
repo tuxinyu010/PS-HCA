@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "高原强雷击活动击中线路",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "220kV虎曲线B、C相绝缘子闪络，形成短路故障（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "线路两侧保护正确动作跳闸，柴拉直流发生双极换相失败（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "系统电压剧烈波动，频率升高，稳定性受破坏（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "稳控装置动作，切除53条馈线负荷，减供84.26MW（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "线路雷电设防水平不足，无法抵御恶劣气象条件",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "对线路防雷设施的检测和维护不足，未能提升防雷水平",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O02",
+      "description": "未针对电网结构薄弱环节制定有效的预防与紧急控制策略",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "电网结构薄弱，不满足N-1要求，形成‘大直流、弱受端、小系统’",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "电源分布不合理，林芝、日喀则等地区单回线路联系，送受电比例高",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "对高原线路防雷特殊性和极端天气危害认识不足，未采取足够强化措施",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "电力行业设计标准未能充分考虑高原恶劣气象条件的特殊性",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "对电网规划执行N-1准则的监管不到位，未纠正结构性风险",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P05",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    }
+  ]
+}

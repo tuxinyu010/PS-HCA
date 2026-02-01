@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "node_id": "P01",
+      "description": "深清甲线2538开关A相内部故障爆炸（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "深东甲线24501刀闸B相瓷瓶断裂，导致2号母线接地（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "母差保护动作，跳开1、2号母线上所有开关，母线失压（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "大面积停电，减供负荷1063.4MW，影响16.8万用户（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "开关存在内部制造缺陷",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P06",
+      "description": "刀闸支柱瓷瓶存在先天性内部缺陷",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P07",
+      "description": "电网局部结构薄弱，不满足N-1要求",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "预试定检未能检测瓷瓶缺陷，状态评估手段缺失",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O02",
+      "description": "母差保护在倒闸时投单母差，故障隔离逻辑适应性不足",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "设备制造厂家质量控制不严",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "电网规划未严格落实N-1准则",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "设备运维策略僵化，缺乏状态评估机制",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "早期设备制造及入网标准与监管不足",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "对电网规划可靠性标准（N-1）监管力度不足",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R03",
+      "description": "缺乏设备全生命周期质量监督政策框架",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P05",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P07",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R03",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P06",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P07",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    }
+  ]
+}

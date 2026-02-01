@@ -1,0 +1,175 @@
+{
+  "nodes": [
+    {
+      "node_id": "M02",
+      "description": "丽江供电局对外委单位监督指导不到位",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "云南送变电公司委托运维管理不到位，监督考核失效",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M00",
+      "description": "安装作业质量控制与验收失效",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O00",
+      "description": "分支地线预绞丝安装错误",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P02",
+      "description": "116号塔分支地线脱落，与A相引流线搭接（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "500kV金楚甲线A相永久接地，保护跳闸且重合失败（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "500kV金楚乙线C相跳闸（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "金安桥电厂全厂对外停电，损失出力240万kW（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O02",
+      "description": "故障状态反馈失效（巡视未登塔且谎报）",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O03",
+      "description": "故障诊断决策控制失效（基于错误测距数据）",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O04",
+      "description": "故障查找过程协调控制失效",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O05",
+      "description": "故障查找与隔离过程延误",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "E01",
+      "description": "恶劣天气（雷雨、大风、浓雾）",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "E02",
+      "description": "复杂地形（山区、金沙江，交通不便）",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "O00",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M00",
+      "to_node_id": "O00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "M00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "O04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "O05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O03",
+      "to_node_id": "O05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O04",
+      "to_node_id": "O05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E01",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E01",
+      "to_node_id": "O04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E02",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E02",
+      "to_node_id": "O04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O05",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "发生强度为557.6kA的极端雷击活动",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "输电线路耐雷水平（最高428kA）低于实际遭遇的雷电流（557.6kA）",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P02",
+      "description": "万顺二线、三线因雷电反击导致A、C相绝缘闪络，同时跳闸（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "关键输电通道双回线中断，引发电网功率严重失衡（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "安全稳定控制装置动作，切除总计3200MW发电负荷（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "R01",
+      "description": "500kV线路防雷设计标准未能覆盖类似557.6kA的极端雷电流事件",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "缺乏针对关键输电通道的差异化、强化防护强制规定",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "线路设计依据现有标准，未充分考虑关键通道可能遭遇的极端雷电流",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "未建立有效的运行经验反馈及标准升级推动机制",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "R01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "R02",
+      "relationship": "导致"
+    }
+  ]
+}

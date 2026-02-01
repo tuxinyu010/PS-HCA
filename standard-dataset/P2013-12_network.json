@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "雷雨大风天气",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "500kV泗新线B相闪络跳闸（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "多回直流系统受交流电压扰动，出现换相失败（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "林枫直流枫泾换流站重瓦斯保护误动，单极闭锁（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "复奉直流奉贤换流站双极低端闭锁（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "电网总计损失453万kW功率（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P06",
+      "description": "平抗瓦斯继电器连接部位悬臂梁结构设计缺陷，易受暂态冲击误动",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "对关键设备（如瓦斯继电器）的定期检测与状态评估不足，未能发现固有缺陷",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "设备采购技术规范未明确要求瓦斯继电器满足抗暂态大电流冲击性能标准",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "设备投运前验收测试未模拟暂态大电流冲击等严酷工况，未能发现设计缺陷",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "电网安全技术标准未对关键辅助设备（如瓦斯继电器）的抗暂态冲击性能提出明确强制性要求",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P06",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P06",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "nodes": [
+    {
+      "node_id": "P01",
+      "description": "P2PCPB系统电流采集板卡(PS862XP)故障输出190A错误信号（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "双极中性母线差动保护差流超限但出口被控制极信号闭锁（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "控制极切换触发被闭锁信号同时出口，极Ⅱ闭锁并合上NBGS开关（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "NBGS开关电流测量板卡(PS862E)量程不足导致测量错误（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "极Ⅰ双极中性母线差动保护误动，极Ⅰ闭锁（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P06",
+      "description": "龙政直流双极闭锁，中断输送功率1031MW并切机670MW（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "R01",
+      "description": "技术标准未强制要求板卡自检与保护逻辑独立性",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "监管机构对在运系统隐患排查治理要求不足",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "电流采集板卡缺乏自检机制",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "运行人员切换控制极前未发现极Ⅱ保护系统异常差流",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "NBGS电流测量板卡量程设计不足",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "保护出口逻辑错误地依赖控制极状态",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M06",
+      "description": "系统设计院未识别保护逻辑耦合风险",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M07",
+      "description": "设备供应商质量控制与设计验证不足",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O02",
+      "description": "站内监控(SCADA)告警信号被控制极信号闭锁",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P05",
+      "to_node_id": "P06",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M06",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M07",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M06",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M07",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M07",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M07",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "特大泥石流灾害发生",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "唐家沟及金窝电站关键设施被冲毁（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "经济损失约2250万元（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "E02",
+      "description": "极端强降雨天气",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "E03",
+      "description": "高山峡谷地质灾害高风险区地质环境",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "E02",
+      "to_node_id": "E01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E03",
+      "to_node_id": "E01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    }
+  ]
+}

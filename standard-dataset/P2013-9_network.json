@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "node_id": "P01",
+      "description": "导线对树木放电闪络（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "极Ⅱ直流线路保护动作闭锁（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "极Ⅰ再启动失败闭锁（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "±800kV锦苏直流双极闭锁（事故类型）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "重要跨区直流输电通道完全中断（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "E02",
+      "description": "山火产生高温、浓烟及大量导电漂浮物",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P06",
+      "description": "线路绝缘设计缺乏针对山火漂浮物的特殊防护",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "群众护线员对山火发展趋势判断经验不足，信息报送不及时",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "E02",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    }
+  ]
+}

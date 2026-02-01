@@ -1,0 +1,203 @@
+{
+  "nodes": [
+    {
+      "node_id": "P01",
+      "description": "主变压器C相储油柜胶囊挂钩存在制造毛刺（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "胶囊因毛刺破损（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "变压器内部绝缘受潮（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "变压器内部绝缘失效（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "X柱高压绕组发生贯穿性短路故障（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O01",
+      "description": "变压器差动保护、重瓦斯保护正确动作（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O02",
+      "description": "主变压器跳闸，失去主外电源，切换至辅助电源（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O03",
+      "description": "反应堆自动停堆，主变压器C相本体开裂损坏（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "M01",
+      "description": "沈变胶囊挂钩制造工艺过程控制存在缺陷，内部检验屏障失效",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "沈变对现场异常问题处理不足，未能识别受潮风险并采取措施",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "工程公司对不符合项报告和设备问题处理单监管不到位，监造纪律不严",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M04",
+      "description": "工程公司未督促安装单位及时开启不符合项报告，也未督促制造厂开启设备问题处理单",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M05",
+      "description": "东电一公司发现质量问题后未及时开启不符合项报告流程",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M06",
+      "description": "红沿河公司部分专业人员对制造、安装、试验过程监督不足",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01_c",
+      "description": "安装前检验失效：未进入储油柜内部细致检查，未发现毛刺",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O02_c",
+      "description": "发现胶囊破损异响后，未及时开启不符合项报告，无有效防潮措施",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O03_c",
+      "description": "胶囊更换后，未识别受潮风险并增加检查试验以验证是否受潮",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P05",
+      "to_node_id": "O01",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "O02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "O03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "O03_c",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "O01_c",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M04",
+      "to_node_id": "O02_c",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M04",
+      "to_node_id": "O03_c",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M05",
+      "to_node_id": "O02_c",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M06",
+      "to_node_id": "M03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M06",
+      "to_node_id": "M04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M06",
+      "to_node_id": "M05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01_c",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02_c",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O03_c",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    }
+  ]
+}

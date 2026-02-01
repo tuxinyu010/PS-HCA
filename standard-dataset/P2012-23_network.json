@@ -1,0 +1,67 @@
+{
+  "nodes": [
+    {
+      "node_id": "P00",
+      "description": "500kV穗水甲线A相线路故障（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P01",
+      "description": "穗东、宝安、肇庆、广州换流站多直流同时换相失败（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "多直流同时换相失败事件(最终损失)",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "电网结构脆弱性：多直流逆变站电气距离过近，缺乏有效隔离或动态支撑",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "规划设计对交直流耦合风险分析不足，未确立防止多直流同时受扰的网架设计准则",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "电力安全监管标准缺失针对大型交直流混联电网的系统性安全约束（如扩展N-1准则）",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "P00",
+      "to_node_id": "P01",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    }
+  ]
+}

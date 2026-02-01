@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "雷雨大风天气作用（初始扰动）",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "E02",
+      "description": "线路处于两山峰间风口特殊地形",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "架空地线悬垂线夹压条存在缩孔质量缺陷",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P02",
+      "description": "地线与C相导线设计/安装安全距离裕度不足（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P00",
+      "description": "在大风作用下振动及摩擦导致线夹压条负载增加、断裂（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "220kV大南线C相导线放电、线路跳闸重合失败（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O01",
+      "description": "线路特巡缺乏低能见度观测仪器，隐患未及时发现",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O02",
+      "description": "调度中心孤网运行时协调控制小水电不足",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P04",
+      "description": "桂林北部电网失去大网支撑，进入孤网运行状态（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "孤网频率电压失稳，最终垮网（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P06",
+      "description": "220kV南塘站、湘山站等变电站对外停电，负荷损失（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P07",
+      "description": "线路老旧",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "M01",
+      "description": "设备入网质量检验失效，不合格线夹投入运行",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "电网规划违反N-1准则，单线供电导致系统性风险",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "对特殊地形线路设计、运维标准的执行监管或指导不足",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E02",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P00",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P07",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P05",
+      "to_node_id": "P06",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    }
+  ]
+}

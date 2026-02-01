@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "存在狭长风口、临近水系的微地形微气象区,发生瞬时风速超过40m/s的跑线风",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "500kV平肥、平西线风偏角超过临界值，导线对塔身放电（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "线路机械结构抗风能力不足（设计标准30m/s）",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P03",
+      "description": "保护装置正确动作，线路跳闸（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P00",
+      "description": "多机组停机（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "平圩、田集等电厂总计减出力约2250MW（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "M01",
+      "description": "线路设计未考虑微地形微气象特征，机械套用通用标准",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "老旧线路防风偏改造不彻底，缺乏系统性能力提升",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "行业设计规范未强制要求微地形勘测与差异化设计",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R02",
+      "description": "对老旧线路抗灾改造效果缺乏强制性后评估监管",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O01",
+      "description": "调度拍停机组，实施应急处置",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P03",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P00",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P00",
+      "to_node_id": "P04",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R02",
+      "to_node_id": "M02",
+      "relationship": "导致"
+    }
+  ]
+}

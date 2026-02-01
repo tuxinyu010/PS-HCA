@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "特大暴雨",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "厂房进水被淹（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P02",
+      "description": "2台机组停运（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P02",
+      "relationship": "引发"
+    }
+  ]
+}

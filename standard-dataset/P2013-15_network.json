@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "雷雨大风强对流天气",
+      "layer": "环境/扰动层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P01",
+      "description": "阳东I、Ⅱ、Ⅲ线，东三I、Ⅱ、Ⅲ导线风偏放电跳闸（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "阳城电厂8台机组全部停运（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P06",
+      "description": "输电线路设计防风能力不足（设计风速30m/s）",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P05",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    }
+  ]
+}
