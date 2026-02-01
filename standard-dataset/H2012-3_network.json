@@ -1,0 +1,285 @@
+{
+  "nodes": [
+    {
+      "node_id": "E01",
+      "description": "汇能公司吊车碰撞110kV天聚二线",
+      "layer": "环境/扰动层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P00",
+      "description": "A、B相短路及光纤损坏（初始故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P01",
+      "description": "天聚二线光纤差动保护因碰撞损坏而拒动",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P02",
+      "description": "天聚二线距离保护Ⅲ段动作时间整定为0.9秒，时间过长",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P08",
+      "description": "天聚二线主保护拒动，后备距离保护Ⅲ段0.9s动作跳闸（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P03",
+      "description": "天辰电厂110kV母联复压过流保护在区外故障时误动作",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P09",
+      "description": "天辰电厂110kV母联保护误动跳闸，电网解列为两个孤网系统（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P04",
+      "description": "天业电网稳控装置逻辑缺陷，无法识别电网解列且策略执行不完整",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P10",
+      "description": "天业电网稳控装置动作切6、7号机组，但逻辑缺陷导致后续控制失效（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P06",
+      "description": "新疆主网稳控装置策略单一，直接动作断开联络线",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P11",
+      "description": "新疆主网稳控装置动作断开220kV辰石东线，系统二进入孤网（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P05",
+      "description": "系统二内四台机组超速保护OPC定值均为3090r/min，缺乏阶梯配合",
+      "layer": "物理/设备层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "P12",
+      "description": "系统一发电严重小于用电，频率下降，机组陆续跳闸，最终垮网停电（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P13",
+      "description": "系统二发电大于用电，频率飙升，OPC同时动作导致功率振荡，机组跳闸，最终垮网停电（级联故障）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "P14",
+      "description": "天业集团自备电厂全厂对外停电，损失出力1100MW（最终损失）",
+      "layer": "物理/设备层",
+      "node_type": "fault"
+    },
+    {
+      "node_id": "O01",
+      "description": "未监控维护天聚二线光纤通道，导致主保护失效隐患未发现",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O02",
+      "description": "未进行全网保护定值配合计算与校验，导致母联保护误动",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "O03",
+      "description": "未对稳控装置策略进行充分测试验证，导致逻辑缺陷未暴露",
+      "layer": "技术/运营层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M01",
+      "description": "对外包施工单位在高压设备附近作业安全管理存在漏洞，安全文化薄弱",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M02",
+      "description": "电网设计未贯彻纵深防御思想，未设计快速可靠后备保护方案",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M03",
+      "description": "设备采购与技术管理漏洞，未建立对稳控等关键装置功能的持续审查与改进机制",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M04",
+      "description": "未组织对自备电网孤网运行进行系统性风险评估并制定统一技术规范",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "M05",
+      "description": "未建立有效的技术问题上报与决策修正流程，对基层反馈的技术风险响应不足",
+      "layer": "组织/管理层",
+      "node_type": "cause"
+    },
+    {
+      "node_id": "R01",
+      "description": "对并网发电企业技术监督不足，未能识别系统性脆弱环节",
+      "layer": "政策/监管层",
+      "node_type": "cause"
+    }
+  ],
+  "edges": [
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P00",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "E01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P00",
+      "to_node_id": "P08",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P01",
+      "to_node_id": "P08",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P02",
+      "to_node_id": "P08",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P08",
+      "to_node_id": "P09",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P03",
+      "to_node_id": "P09",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P09",
+      "to_node_id": "P10",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P09",
+      "to_node_id": "P11",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P04",
+      "to_node_id": "P10",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P06",
+      "to_node_id": "P11",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P10",
+      "to_node_id": "P12",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P11",
+      "to_node_id": "P13",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P05",
+      "to_node_id": "P13",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "P12",
+      "to_node_id": "P14",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "P13",
+      "to_node_id": "P14",
+      "relationship": "引发"
+    },
+    {
+      "from_node_id": "O01",
+      "to_node_id": "P01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O02",
+      "to_node_id": "P03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "O03",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M01",
+      "to_node_id": "E01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M02",
+      "to_node_id": "P02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M03",
+      "to_node_id": "P04",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M04",
+      "to_node_id": "P05",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M05",
+      "to_node_id": "O01",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M05",
+      "to_node_id": "O02",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "M05",
+      "to_node_id": "O03",
+      "relationship": "导致"
+    },
+    {
+      "from_node_id": "R01",
+      "to_node_id": "M04",
+      "relationship": "导致"
+    }
+  ]
+}
